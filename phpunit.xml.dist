@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         cacheResult="false"
+         executionOrder="depends,defects"
+         convertNoticesToExceptions="false"
+         convertWarningsToExceptions="false"
+         beStrictAboutOutputDuringTests="true"
+         beStrictAboutTodoAnnotatedTests="true"
+         verbose="true"
+         colors="true"
+         failOnRisky="true"
+         failOnWarning="true">
+    <php>
+        <server name="APP_ENV" value="test"/>
+        <server name="APP_DEBUG" value="false"/>
+        <server name="KERNEL_CLASS" value="Sofyco\Bundle\PaginationBundle\Tests\App\Kernel" force="true"/>
+    </php>
+
+    <testsuites>
+        <testsuite name="default">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+
+    <coverage processUncoveredFiles="true">
+        <include>
+            <directory suffix=".php">src</directory>
+        </include>
+    </coverage>
+</phpunit>

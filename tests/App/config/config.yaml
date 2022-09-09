@@ -1,0 +1,7 @@
+framework:
+    test: ~
+
+services:
+    Sofyco\Bundle\PaginationBundle\Tests\App\Model\Example:
+        public: true
+        autowire: true

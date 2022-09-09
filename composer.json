@@ -1,0 +1,38 @@
+{
+    "name": "sofyco/pagination-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony Pagination Bundle",
+    "keywords": ["php", "symfony", "pagination"],
+    "homepage": "https://github.com/sofyco/pagination-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sofy Korzhova",
+            "email": "sofykorzhova@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "sofyco/pagination": "^1.0",
+        "symfony/framework-bundle": "^6.0"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^1.8",
+        "phpunit/phpunit": "^9.5",
+        "symfony/yaml": "^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sofyco\\Bundle\\PaginationBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Sofyco\\Bundle\\PaginationBundle\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    }
+}
