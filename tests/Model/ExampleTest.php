@@ -19,6 +19,8 @@ final class ExampleTest extends KernelTestCase
         $storage = new \ArrayObject([1, 2, 3, 4, 5]);
         $result = $model->getResult($query, $storage);
 
+        self::assertSame($query->skip, $result->skip);
+        self::assertSame($query->limit, $result->limit);
         self::assertSame(5, $result->count);
         self::assertSame([3, 4], $result->items);
     }
