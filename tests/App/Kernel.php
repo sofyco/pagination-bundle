@@ -4,7 +4,6 @@ namespace Sofyco\Bundle\PaginationBundle\Tests\App;
 
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
-use Symfony\Component\Routing\Loader\Configurator\RoutingConfigurator;
 
 final class Kernel extends \Symfony\Component\HttpKernel\Kernel
 {
@@ -18,10 +17,8 @@ final class Kernel extends \Symfony\Component\HttpKernel\Kernel
 
     protected function configureContainer(ContainerConfigurator $container): void
     {
-        $container->import('config/config.yaml');
-    }
+        $container->extension('framework', ['test' => true]);
 
-    protected function configureRoutes(RoutingConfigurator $routes): void
-    {
+        $container->services()->set(Model\Example::class, Model\Example::class)->autowire()->public();
     }
 }
