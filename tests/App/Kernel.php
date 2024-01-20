@@ -2,6 +2,8 @@
 
 namespace Sofyco\Bundle\PaginationBundle\Tests\App;
 
+use Sofyco\Bundle\PaginationBundle\PaginationBundle;
+use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
@@ -11,8 +13,8 @@ final class Kernel extends \Symfony\Component\HttpKernel\Kernel
 
     public function registerBundles(): iterable
     {
-        yield new \Symfony\Bundle\FrameworkBundle\FrameworkBundle();
-        yield new \Sofyco\Bundle\PaginationBundle\PaginationBundle();
+        yield new FrameworkBundle();
+        yield new PaginationBundle();
     }
 
     protected function configureContainer(ContainerConfigurator $container): void

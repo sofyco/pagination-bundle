@@ -9,7 +9,7 @@ on:
 jobs:
     build:
         runs-on: ubuntu-latest
-        strategy: { matrix: { php-version: ['8.2'] } }
+        strategy: { matrix: { php-version: ['8.3'] } }
         steps:
             -   uses: shivammathur/setup-php@v2
                 with:
@@ -34,7 +34,7 @@ jobs:
     phpstan:
         needs: build
         runs-on: ubuntu-latest
-        strategy: { matrix: { os: [ubuntu-latest], php-version: ['8.2'] } }
+        strategy: { matrix: { os: [ubuntu-latest], php-version: ['8.3'] } }
         steps:
             -   uses: shivammathur/setup-php@v2
                 with:
@@ -50,12 +50,12 @@ jobs:
                     restore-keys: ${{ runner.os }}-${{ matrix.php-version }}-composer-
 
             -   name: Run static analyse
-                run: vendor/bin/phpstan analyse --no-progress --xdebug
+                run: vendor/bin/phpstan analyse --no-progress
 
     phpunit:
         needs: build
         runs-on: ubuntu-latest
-        strategy: { matrix: { php-version: ['8.2'] } }
+        strategy: { matrix: { php-version: ['8.3'] } }
         steps:
             -   uses: shivammathur/setup-php@v2
                 with:
